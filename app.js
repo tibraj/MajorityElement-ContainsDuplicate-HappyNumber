@@ -35,3 +35,15 @@ returnContainsDuplicate(numbers);
 returnDuplicates(numbers);
 
 //Happy Number
+function happyNumber(n) {
+    let set = new Set();
+    while(n !== 1 && !set.has(n)) {
+        set.add(n);
+        n = String(n).split('').reduce((acc, cur) => acc + cur * cur, 0);
+    }
+    console.log(n === 1);
+    return n === 1;
+}
+
+happyNumber(19);
+happyNumber(2);
