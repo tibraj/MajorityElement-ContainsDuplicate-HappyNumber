@@ -1,5 +1,9 @@
 //Majority Element
-
+function majorityElement(nums) {
+    const obj = {};
+    nums.forEach(num => obj[num] = ++obj[num] || 1);
+    return Object.keys(obj).filter(key => obj[key] > nums.length / 2)[0];
+}
 
 
 //Contains Duplicate
